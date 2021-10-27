@@ -12,6 +12,7 @@
 </head>
 <body>
   <header id="header" class="header">
+    <div id="notification_container"></div>
     <div class="container">
       <div class="row">
         <div class="four columns logo">
@@ -44,7 +45,7 @@
   </header>
 
   <form id="search-item" class="search-form">
-    <input type="text" placeholder="Rechercher ...">
+    <input id= "search_bar" type="text" placeholder="Rechercher ...">
   </form>
 
   <div id="courses-list">
@@ -54,7 +55,7 @@
     <div id="no_course" class="hidden">Aucun cours n'est disponible pour votre recherche</div>
   </div>
 
-  <div class="courses__container">
+  <div id = "courses-container" class="courses__container">
     <div class="course__item">
       <figure class="course_img">
         <img src="img/courses/ux_ui.jpg">
