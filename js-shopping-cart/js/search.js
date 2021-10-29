@@ -26,7 +26,7 @@ document.getElementById( 'search_bar' ).addEventListener( 'keyup', function( eve
             container.style.display = 'block';
             count_results++;
 
-    //Vérifie si il y a du contenu dans les h4 et en fonction du résultat,
+    //Vérifie si il y a du contenu dans les h4
     // affiche le block en question ou non.
 
         } else container.style.display = 'none';

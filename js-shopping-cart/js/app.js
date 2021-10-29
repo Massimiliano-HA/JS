@@ -6,7 +6,7 @@
 
     // Afficher dans un console log chaque variable d'un element du Panier
     
-    if(cart !==null){
+    if(cart !==null){                                   //Condition qui s'applique s'il y a des éléments dans le locale storage
         for(let j       = 0; j < cart.length; j++){
         let search      = searchCourse(cart[j])
             if (search == undefined){
@@ -89,6 +89,9 @@ coursesContainer.addEventListener('click', function (e) {
     
             document.getElementById('dispo-' + id).innerHTML = COURSES[id - 1].stock;  //
 
+
+
+
             // Rechercher dans le tableau de COURSES le bon element à partir de l'ID grace a la fonction searchCourse
 
             let row = document.createElement( 'tr' );
@@ -101,7 +104,7 @@ coursesContainer.addEventListener('click', function (e) {
     
             tbody.appendChild( row );           //Permet de mettre en ligne les informations dans le tbody
 
-            //info dans le local storage//
+        //---info dans le local storage---//
             let cart = getCart();
             cart.push( course.id);
             saveCart(cart);
@@ -132,16 +135,16 @@ coursesContainer.addEventListener('click', function (e) {
             table.innerHTML = " ";
             
             localStorage.clear();
-            //permet de changer les nb de la dispo//
 
-            for (let index = 0; index < COURSES.length; index++) 
+     //permet de changer les nb de la dispo//
+
+        for (let index = 0; index < COURSES.length; index++) 
             {
-                console.log(index);
+            console.log(index);
 
-                COURSES[index].stock = DEFAULT_COURSES[index].stock;
+            COURSES[index].stock = DEFAULT_COURSES[index].stock;
 
-                document.getElementById('dispo-' + (index + 1)).innerHTML = DEFAULT_COURSES[index].stock;
-                //console.log(document.querySelector('#dispo-' + index+1));
+            document.getElementById('dispo-' + (index + 1)).innerHTML = DEFAULT_COURSES[index].stock;
             }
         }
     });
@@ -225,7 +228,7 @@ let showNotification = (message) => { //-------fonction associée à notif conta
             <p>${message}</p>
         </div>
     `
-//  innerHTML += c'est l'affichage des notifs une à une dans ce cas présent
+// ----innerHTML += c'est l'affichage des notifs une à une dans ce cas présent
 
     setTimeout(() => {
         document.querySelector("#notification_container .content").remove(); // notif qui s'enlève au bout de 3 secondes
